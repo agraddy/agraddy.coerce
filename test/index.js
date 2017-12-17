@@ -21,6 +21,7 @@ tap.assert.equal(mod.int('1,000,000.00'), 1000000, 'Should handle commas.');
 tap.assert.equal(mod.int('') instanceof Error, true, 'Should create an error when not a valid number.');
 tap.assert.equal(mod.int('asdf') instanceof Error, true, 'Should create an error when not a valid number.');
 
+tap.assert.equal(mod.dollars(0), '0.00', 'Should move decimal two places to left.');
 tap.assert.equal(mod.dollars(100), '1.00', 'Should move decimal two places to left.');
 tap.assert.equal(mod.dollars(105), '1.05', 'Should move decimal two places to left.');
 tap.assert.equal(mod.dollars(105.3), '1.05', 'Should move decimal two places to left.');
